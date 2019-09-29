@@ -1,0 +1,40 @@
+doctype html
+html
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width")
+    title pgcnpg
+    style.
+        .block {
+            position: relative;
+            overflow: hidden;
+            clear: both;
+            margin: 40px auto;
+            width: 80%;
+            max-width: 1000px;
+            color: #fff;
+            text-align: center;
+        }
+        .phase {
+            display: block;
+            float: left;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+  body
+    .block
+      each v in states
+        if numbers[v.state]
+          .phase(style=`width: ${percents[v.state]}%; background-color: ${v.color}`)
+            p= v.state
+            p= numbers[v.state]
+            p= (Math.round(percents[v.state]) || 0) + '%'
+    .block
+      each v in states
+        .phase(style=`width: 25%; background-color: ${v.color}`)
+          p= v.state
+          p= numbers[v.state] || 0
+          p= (Math.round(percents[v.state]) || 0) + '%'
+    .block(style="color: #000;")
+      span 最后更新
+      span= lastupdate
