@@ -36,5 +36,9 @@ html
           p= numbers[v.state] || 0
           p= (Math.round(percents[v.state]) || 0) + '%'
     .block(style="color: #000;")
-      span 最后更新
-      span= lastupdate
+      p
+        span 数据来源:
+        a(href="https://github.com/postgres-cn/pgdoc-cn/wiki/pg11") https://github.com/postgres-cn/pgdoc-cn/wiki/pg11
+      p
+        span 最后更新
+        span= lastupdate
