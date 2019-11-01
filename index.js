@@ -105,6 +105,18 @@ const updateDataset = async () => {
   if (!dataset.length) return;
   analysis = calc(dataset);
   lastupdate = litdate().format('Y-m-d H:i:s') + '(GMT+08:00)';
+  fs.writeFile(
+    'analysis.log',
+    JSON.stringify({
+      data: analysis,
+      time: litdate().format('Y-m-d H:i:s'),
+    }),
+    {
+      encoding: 'utf8',
+      flag: 'a',
+    },
+    () => {},
+  );
 };
 
 // 立即同步，然后每小时同步一次

@@ -3,7 +3,7 @@ html
   head
     meta(charset="UTF-8")
     meta(name="viewport" content="width=device-width")
-    title pgcnpg
+    title PostgreSQL 11.2 中文手册翻译进度
     style.
         .block {
             position: relative;
@@ -12,7 +12,6 @@ html
             margin: 40px auto;
             width: 80%;
             max-width: 1000px;
-            color: #fff;
             text-align: center;
         }
         .phase {
@@ -22,6 +21,8 @@ html
             white-space: nowrap;
         }
   body
+    .block(style="color: #000;")
+      h1 PostgreSQL 11.2 中文手册翻译进度
     .block
       each v in states
         if numbers[v.state]
@@ -37,8 +38,8 @@ html
           p= (Math.round(percents[v.state]) || 0) + '%'
     .block(style="color: #000;")
       p
-        span 数据来源:
-        a(href="https://github.com/postgres-cn/pgdoc-cn/wiki/pg11") https://github.com/postgres-cn/pgdoc-cn/wiki/pg11
+        span 数据来源&nbsp;
+        a(href="https://github.com/postgres-cn/pgdoc-cn/wiki/pg11" style="color: blue;") https://github.com/postgres-cn/pgdoc-cn/wiki/pg11
       p
-        span 最后更新
+        span 最后更新&nbsp;
         span= lastupdate
